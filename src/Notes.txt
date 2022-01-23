@@ -1,0 +1,146 @@
+    Cucumber
+        Cucumber is a Framework
+        We will learn the tool, and the framework
+
+    Framework provides:
+        - Organized Structure
+        - Hierarchy
+        - Separate place for separate codes
+        - Single execution point
+
+    We use maven as a build management tool
+
+    gorup id - company name
+    artifact id - project name
+
+    main folder - for development code
+    test folder - for testing code
+        -- java - for coding part
+        -- resources for non-coding part
+
+    pom.xml -- to add dependency
+    it is a configuratyion file which is considered as a backbone of the maven project
+
+    Cucumber -- It supports behavioral driven development appraoch wherein we write our test cases specification in
+                gherkin langauge (plain english)
+
+    Keywords: features, background, scenario
+
+                Given - precondition - Given user is navigated to the HRMS application
+                When - Actions -- When the user enters username and password
+                And -- this tag can come with every other keyword -- And user click on login button
+                Then -- expected output - result - Then user should be able to see dashboard page
+
+
+    Recap:
+        Maven - build management tool
+
+        test - here we write code for testing
+            -- java - coding stuff
+            -- resources - non-coding stuff
+
+                        Given - precondition - Given user is navigated to the HRMS application
+                        When - Actions -- When the user enters username and password
+                        And -- this tag can come with every other keyword -- And user click on login button
+                        Then -- expected output - result - Then user should be able to see dashboard page
+                        Feature -- .feature -- to write scenario we use feature file
+
+
+    Acceptance Criteria:
+        1 search by id - 23638000
+        2 search by name
+1. Given user opens browser and navigates to HRMS
+And user is logged in as admin
+And user is on employee list page
+When user enters valid employee id
+And user clicks on search button
+Then user sees employee in the employee table
+
+2.
+Given user opens browser and navigated to HRMS
+And user is logged in as an admin
+And user is on employee list page
+When user enters firstname and lastname
+And user clicks on search button
+The user sees employee in the employee table
+
+
+
+Class 3
+Recap
+Reasons to use Cucumber:
+    To increase transparency/ to reduce communication gap
+    It supports BDD (Gherkin) language - easy to understand for non technical people also
+    Focuses on the end user
+
+Feature file - to write our test scenarios
+
+Keywords:
+    Given - write a precondition
+    When - to perform actions
+    And - supporting tag that can be associated with any other tag
+    Then - Result
+
+Step definition - to implement the code for the steps written in feature file, we use step definitions
+
+Runner class -
+
+
+backgrounbd - it is applicable only for one feature file, here we add common steps among all the scenarios
+
+Class 4:
+
+Recap
+    Runner class - to configure the execution flow of our test cases
+
+    @Runwith  from j-unit
+    @cucumberoptions - to provide configurations
+        features - path of my feature files
+        glue - path of the step definitions for feature files
+        dryRun - if it is set to true, it stops actual execution and provides the missing steps snippet
+        monochrome - it removes unreadable character and cleans the console
+        tags - for grouping
+        plugins - for report generation and other purpose
+
+        background - to put common steps among all the scenarios from single feature file, we use background
+        Hooks - We use hooks to provide preconditions and post conditions
+            We should provide hooks under the package where my steps are available
+
+        Hooks vs. Background -
+            Background - it is applicable to one feature file
+            Hooks - it is applicable to all the feature files
+
+
+Class 5
+    Recap:
+        Hooks - precondition and post-condition for all feature files
+        before and after = pre condition and post-condition tags
+
+        Passing the data
+            Passing the data directly from feature file - scenario
+            Passing the data from @examples table from scenario outline to achieve ddt
+
+        from data table -
+            data table vs. example -
+            data table is applicable to just a single step
+            examples table is applicable to complete scenario
+
+
+<<<<<<< HEAD
+Class 6 -
+    This framework supports BDD and DDT
+
+
+Class 7 -
+recap -
+    Page object model design pattern -
+    It allows us to create classes according to the pages available in the application
+    We place all locators and functions related to this particular page in respective class\
+
+
+
+Class 8 -
+    Using page object model (POM) to write functions in respective classes
+
+
+
