@@ -47,6 +47,7 @@ public class EmployeeSearchSteps extends CommonMethods {
         //   EmployeeListPage employeeListPage = new EmployeeListPage();
         //WebElement name = driver.findElement(By.id("empsearch_employee_name_empName"));
         // employeeListPage.empSearchStepByName.sendKeys("XYZT");
-        sendText(employeeListPage.empSearchStepByName,"XYZT");
+        sendText(employeeListPage.empSearchStepByName,"XYZT"
+        );
     }
 }

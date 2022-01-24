@@ -1,9 +1,9 @@
 
 package steps;
 
-import pages.AddNewEmployeePage;
-import pages.DashboardPage;
-import pages.EmployeeListPage;
+import Pages.AddNewEmployeePage;
+import Pages.DashboardPage;
+import Pages.EmployeeListPage;
 import Pages.LoginPage;
 
 public class PageInitializer {

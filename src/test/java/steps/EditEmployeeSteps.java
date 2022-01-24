@@ -31,7 +31,7 @@ public class EditEmployeeSteps extends CommonMethods {
             WebElement SSN = driver.findElement(By.id("personal_txtNICNo"));
             sendText(SSN, ssn);
             WebElement married = driver.findElement(By.id("personal_txtNICNo"));
-            selectDropDown(married, maritalStatus);
+            selectDropdown(married, maritalStatus);
             WebElement DOB = driver.findElement(By.id("personal_DOB"));
             sendText(DOB, dob);
             WebElement smoke = driver.findElement(By.id("personal_chkSmokeFlag"));

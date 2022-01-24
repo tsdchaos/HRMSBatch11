@@ -1,4 +1,4 @@
-package pages;
+package Pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,6 +35,16 @@ public class AddNewEmployeePage extends CommonMethods {
 
     @FindBy(id="btnSave")
     public WebElement saveButton;
+
+    @FindBy(xpath="//*[@value='Edit']")
+    public WebElement editOption;
+
+    @FindBy(id="personal_cmbMarital")
+    public WebElement maritalStatus;
+
+    @FindBy(id="personal_cmbNation")
+    public WebElement nationality;
+
 
     public AddNewEmployeePage(){
         PageFactory.initElements(driver, this);

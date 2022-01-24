@@ -1,3 +1,4 @@
+
 Feature: US-12345 Employee search
   Background:
     When user is logged in with valid admin credentials

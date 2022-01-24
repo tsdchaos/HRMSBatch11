@@ -86,7 +86,7 @@ Step definition - to implement the code for the steps written in feature file, w
 Runner class -
 
 
-backgrounbd - it is applicable only for one feature file, here we add common steps among all the scenarios
+background - it is applicable only for one feature file, here we add common steps among all the scenarios
 
 Class 4:
 
@@ -126,7 +126,6 @@ Class 5
             examples table is applicable to complete scenario
 
 
-<<<<<<< HEAD
 Class 6 -
     This framework supports BDD and DDT
 
@@ -141,6 +140,19 @@ recap -
 
 Class 8 -
     Using page object model (POM) to write functions in respective classes
+
+    use common methods to write common functions in it such as:
+        sendText
+        click
+
+
+        to execute from cmd/terminal -
+        open the cmd in the project root where pom.xml resides, the execute the below commands
+
+    mvn clean
+    mvn test
+    mvn clean test
+    mvn test -Dcucumber.filter.tags="@tagname"
 
 
 

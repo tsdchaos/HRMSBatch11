@@ -1,9 +1,8 @@
 package utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -12,6 +11,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import steps.PageInitializer;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class CommonMethods extends PageInitializer {
@@ -67,13 +70,39 @@ public class CommonMethods extends PageInitializer {
         getJSExecutor().executeScript("arguments[0].click();", element);
     }
 
+    //for dropdown selection using text
+    public static void selectDropdown(WebElement element, String text){
+        Select s= new Select(element);
+        s.selectByVisibleText(text);
+    }
 
+
+    //screenshot method
+    public static byte[] takeScreenshot(String fileName){
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        byte[] picBytes = ts.getScreenshotAs(OutputType.BYTES);
+        File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+
+        try {
+            FileUtils.copyFile(sourceFile, new File(Constants.SCREENSHOT_FILEPATH + fileName + " " +
+                    getTimeStamp("yyyy-MM-dd-HH-mm-ss")+".png"
+            ));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return picBytes;
+    }
+
+    public static String getTimeStamp(String pattern){
+        Date date = new Date();
+        //yyyy-mm-dd-hh-mm-ss-ms
+        //to format the date according to out choice we have to use this function
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+        return sdf.format(date);
+    }
 
     public static void closeBrowser(){
         driver.quit();
-    }
-    public static void selectDropDown(WebElement element, String value){
-        Select select = new Select(element);
-        select.selectByValue(value);
     }
 }

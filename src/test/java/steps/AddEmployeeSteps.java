@@ -53,6 +53,10 @@ public class AddEmployeeSteps extends CommonMethods {
     @Then("employee added successfully")
     public void employee_added_successfully() {
         System.out.println("Employee added succesfully");
+        click(addNewEmployeePage.editOption);
+        selectDropdown(addNewEmployeePage.maritalStatus, "Other");
+        selectDropdown(addNewEmployeePage.nationality, "British");
+        click(addNewEmployeePage.saveButton);
     }
 
     @When("user enters {string} {string} and {string}")

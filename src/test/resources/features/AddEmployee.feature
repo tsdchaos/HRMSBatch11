@@ -7,7 +7,7 @@ Feature: Add employees
     When user clicks on PIM option
     And user clicks on Add employee button
 
-  @regression
+  @dropdown
   Scenario: Adding one employee from feature file
     And user enters firstname and lastname
     And user clicks on save button
